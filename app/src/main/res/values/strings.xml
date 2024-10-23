@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Skoda Poc App</string>
+    <string name="position" translatable="false">position</string>
+    <string name="title">Title</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Ambient_Lighting">Ambient Lighting - additional functions</string>
+    <string name="Date">Expired on 22 Aug 2024</string>
+    <string name="purchase">Purchase</string>
+    <string name="Additional_info">Experience perfect comfort with interior lighting. The ambient LED lighting includes footwell illumination and offers up to thirty attractive color options.</string>
+
+    <string name="title_car">Car</string>
+    <string name="title_map">Maps</string>
+    <string name="title_inspect">Inspect</string>
+    <string name="title_discover">Discover</string>
+    <string name="title_profile">Profile</string>
+</resources>
