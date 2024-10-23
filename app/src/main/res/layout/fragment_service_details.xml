@@ -1,149 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
-        <!-- FrameLayout for three images -->
-        <FrameLayout
-            android:id="@+id/frameLayoutImages"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.3"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <!-- Second Image -->
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="411dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:contentDescription="Image 2"
-                android:scaleType="centerCrop"
-                android:src="@drawable/car_infotainment_img" />
-            <!-- Third Image -->
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="167dp"
-                android:layout_height="match_parent"
-                android:contentDescription="Image 1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/rectangle_1" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="472dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="200dp"
-                android:contentDescription="Image 3"
-                android:scaleType="centerCrop"
-                android:src="@drawable/rectangle_2" />
-
-        </FrameLayout>
-
-
-        <!-- Nested ConstraintLayout for heading text -->
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/headingLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/frameLayoutImages"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-            <!-- TextView for heading -->
-            <TextView
-                android:id="@+id/textViewHeading"
+            <!-- FrameLayout for three images -->
+            <FrameLayout
+                android:id="@+id/frameLayoutImages"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- Second Image -->
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="411dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Image 2"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/car_infotainment_img" />
+                <!-- Third Image -->
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="167dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Image 1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rectangle_1" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="472dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="200dp"
+                    android:contentDescription="Image 3"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rectangle_2" />
+
+            </FrameLayout>
+
+
+            <!-- Nested ConstraintLayout for heading text -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/headingLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/frameLayoutImages"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- TextView for heading -->
+                <TextView
+                    android:id="@+id/textViewHeading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/Ambient_Lighting"
+                    android:textStyle="bold"
+                    android:textSize="28sp"
+                    android:maxLines="2"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Horizontal Layout for small image and text after the heading -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/imageAndTextLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/headingLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp">
+
+                <!-- Small Image -->
+                <ImageView
+                    android:id="@+id/smallImage"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ellipse_3"
+                    android:contentDescription="Small Image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="16dp" />
+
+                <!-- Text next to small image -->
+                <TextView
+                    android:id="@+id/textViewNextToImage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Date"
+                    android:textSize="16sp"
+                    android:textColor="#9A9696"
+                    app:layout_constraintStart_toEndOf="@id/smallImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- TextView for description taking up the remaining part -->
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_margin="16dp"
-                android:text="@string/Ambient_Lighting"
-                android:textStyle="bold"
-                android:textSize="28sp"
-                android:maxLines="2"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/Additional_info"
+                android:fontFamily="@font/skoda_next_black"
+                android:textSize="18sp"
+                android:textColor="#9A9696"
+                app:layout_constraintTop_toBottomOf="@id/imageAndTextLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/buttonShop" />
+
+            <!-- Button for "Vai allo shop" at the bottom -->
+            <Button
+                android:id="@+id/buttonShop"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/purchase"
+                android:backgroundTint="#0AC892"
+                android:textColor="@android:color/black"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewDescription"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!-- Horizontal Layout for small image and text after the heading -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/imageAndTextLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/headingLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp">
-
-            <!-- Small Image -->
-            <ImageView
-                android:id="@+id/smallImage"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/ellipse_3"
-                android:contentDescription="Small Image"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginStart="16dp" />
-
-            <!-- Text next to small image -->
-            <TextView
-                android:id="@+id/textViewNextToImage"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/Date"
-                android:textSize="16sp"
-                android:textColor="#9A9696"
-                app:layout_constraintStart_toEndOf="@id/smallImage"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!-- TextView for description taking up the remaining part -->
-        <TextView
-            android:id="@+id/textViewDescription"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="16dp"
-            android:text="@string/Additional_info"
-            android:textSize="18sp"
-            android:textColor="#9A9696"
-            app:layout_constraintTop_toBottomOf="@id/imageAndTextLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/buttonShop" />
-
-        <!-- Button for "Vai allo shop" at the bottom -->
-        <Button
-            android:id="@+id/buttonShop"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/purchase"
-            android:backgroundTint="#0AC892"
-            android:textColor="@android:color/black"
-            android:layout_margin="16dp"
-            app:layout_constraintTop_toBottomOf="@id/textViewDescription"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

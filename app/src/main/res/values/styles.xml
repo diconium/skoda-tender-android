@@ -14,7 +14,7 @@
     </style>
     
     <style name="Splash" parent="Theme.Material3.DayNight.NoActionBar">
-<!-- <item name="android:windowBackground">@drawable/android_starter</item>-->
+ <item name="android:windowBackground">@drawable/splash_screen_bg</item>
     </style>
     
 

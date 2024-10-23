@@ -14,4 +14,14 @@
     <string name="title_inspect">Inspect</string>
     <string name="title_discover">Discover</string>
     <string name="title_profile">Profile</string>
+    <string name="online">Online</string>
+    <string name="enyaq_coupe">Enyaq Coupe</string>
+    <string name="seconds_ago">seconds ago</string>
+    <string name="vehicle_status">Vehicle status</string>
+    <string name="locked">Locked</string>
+    <string name="battery_range">Battery range</string>
+    <string name="battery_percentage_kms">61% / 276 km</string>
+    <string name="un_plug">Not plugged in</string>
+    <string name="target_temperature">Target temperature</string>
+    <string name="temp">21\u00B0 C</string>
 </resources>
