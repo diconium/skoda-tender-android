@@ -7,6 +7,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:fontFamily">@font/skoda_next_regular</item>
+        <item name="fontFamily">@font/skoda_next_regular</item>
     </style>
 
     <style name="Splash" parent="Theme.Material3.DayNight.NoActionBar">

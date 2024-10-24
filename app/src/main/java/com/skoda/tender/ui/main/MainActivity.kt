@@ -18,7 +18,7 @@ class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>(Ma
     override fun getLayoutRes() = R.layout.activity_main
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.navView.setOnItemSelectedListener(navListener)
+        binding.bottomView.setOnItemSelectedListener(navListener)
 
         // as soon as the application opens the first
         // fragment should be shown to the user

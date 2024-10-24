@@ -24,4 +24,12 @@
     <string name="un_plug">Not plugged in</string>
     <string name="target_temperature">Target temperature</string>
     <string name="temp">21\u00B0 C</string>
+    <string name="see_all">See all C</string>
+    <string name="payment_services">Payment Services</string>
+    <string name="connect_services">Skoda connect services</string>
+    <string name="infotainment_apps">Payment Services</string>
+    <string name="on_demand_services">On demand services</string>
+    <string name="service_description">Get the real-time info about the traffic with the online infotainment.</string>
+
+
 </resources>

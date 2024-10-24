@@ -8,11 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.skoda.launcher.ui.adapterimport.SearchAdapter
+import com.skoda.launcher.ui.adapterimport.ServiceListAdapter
 import com.skoda.tender.R
 import com.skoda.tender.core.BaseFragment
 import com.skoda.tender.databinding.FragmentHomeBinding
-import com.skoda.tender.databinding.FragmentServiceDetailsBinding
 import com.skoda.tender.ui.main.MainActivityViewModel
 
 
@@ -45,8 +44,8 @@ class HomeFragment : BaseFragment<MainActivityViewModel, FragmentHomeBinding >(M
         list.add("Ambient Lighting")
         list.add("Infotainment Online")
         list.add("Infotainment Online")
-        mBinding.recyclerViewLayout.layoutManager = LinearLayoutManager(requireContext(),RecyclerView.HORIZONTAL,false)
-        mBinding.recyclerViewLayout.adapter= SearchAdapter(list,object : SearchAdapter.SearchListener{
+        mBinding.rvPaymentServices.layoutManager = LinearLayoutManager(requireContext(),RecyclerView.HORIZONTAL,false)
+        mBinding.rvPaymentServices.adapter= ServiceListAdapter(list,object : ServiceListAdapter.SearchListener{
             override fun onClickItem(position: String) {
                 val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
                 transaction.replace(R.id.fragment_container, PaymentServiceScreen())

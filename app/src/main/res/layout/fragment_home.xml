@@ -6,12 +6,12 @@
     <data>
 
     </data>
+
 <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main_layout"
+        android:id="@+id/cl_main_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#161718">
@@ -31,7 +31,8 @@
                 android:fontFamily="@font/skoda_next_bold"
                 android:textColor="@color/white"
                 android:textSize="27sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints" />
 
             <ImageView
                 android:layout_width="35dp"
@@ -43,9 +44,8 @@
             </ImageView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/time_layout"
+            android:id="@+id/status_update_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -56,7 +56,8 @@
                 android:id="@+id/iv_refresh_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_refresh" />
+                android:src="@drawable/ic_refresh"
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/tv_time"
@@ -66,10 +67,11 @@
                 android:text="@string/seconds_ago"
                 android:textColor="@color/grey"
                 android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@+id/iv_refresh_icon" />
+                app:layout_constraintStart_toEndOf="@+id/iv_refresh_icon"
+                tools:ignore="MissingConstraints" />
 
             <View
-                android:id="@+id/green_dot"
+                android:id="@+id/view_active_indicator"
                 android:layout_width="12dp"
                 android:layout_height="12dp"
                 android:layout_marginStart="12dp"
@@ -86,7 +88,8 @@
                 android:text="@string/online"
                 android:textColor="#c4c6c7"
                 android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@id/green_dot" />
+                app:layout_constraintStart_toEndOf="@id/view_active_indicator"
+                tools:ignore="MissingConstraints" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -98,13 +101,13 @@
             android:scaleType="fitCenter"
             android:src="@drawable/car_crop_2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/time_layout"
+            app:layout_constraintTop_toBottomOf="@+id/status_update_layout"
             app:layout_constraintTop_toTopOf="parent">
 
         </ImageView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/card_view"
+            android:id="@+id/cl_vehicle_info_cards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +118,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:weightSum="3">
+                android:weightSum="3"
+                tools:ignore="MissingConstraints">
 
                 <!-- Card 1 -->
                 <androidx.cardview.widget.CardView
@@ -292,17 +296,6 @@
                                     android:textColor="@color/white"
                                     android:textSize="30sp" />
 
-                                <!--                            <TextView-->
-                                <!--                                android:layout_width="wrap_content"-->
-                                <!--                                android:layout_height="wrap_content"-->
-                                <!--                                android:layout_gravity="center"-->
-                                <!--                                android:layout_marginStart="12dp"-->
-                                <!--                                android:gravity="center"-->
-                                <!--                                android:text="Activated"-->
-                                <!--                                android:textColor="@color/white"-->
-                                <!--                                android:textSize="20sp"-->
-                                <!--                                android:textStyle="bold" />-->
-
                             </LinearLayout>
                         </LinearLayout>
 
@@ -341,19 +334,21 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/payment_services_layout"
+            android:id="@+id/cl_payment_services"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/card_view">
+            app:layout_constraintTop_toBottomOf="@+id/cl_vehicle_info_cards">
 
             <TextView
                 android:id="@+id/payment_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Payment Services"
+                android:text="@string/payment_services"
+                android:fontFamily="@font/skoda_next_bold"
                 android:textColor="@color/white"
-                android:textSize="22sp">
+                android:textSize="22sp"
+                tools:ignore="MissingConstraints">
 
             </TextView>
 
@@ -361,21 +356,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="See all"
+                android:text="@string/see_all"
                 android:textColor="#78faae"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints">
 
             </TextView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_layout"
+            android:id="@+id/rv_payment_services"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             tools:listitem="@layout/service_list_items"
-            app:layout_constraintTop_toBottomOf="@+id/payment_services_layout">
+            app:layout_constraintTop_toBottomOf="@+id/cl_payment_services">
 
         </androidx.recyclerview.widget.RecyclerView>
 

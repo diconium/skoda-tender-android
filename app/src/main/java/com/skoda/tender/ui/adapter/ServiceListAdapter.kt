@@ -7,7 +7,7 @@ import com.skoda.tender.core.BaseListAdapter
 import com.skoda.tender.databinding.ServiceListItemsBinding
 
 
-class SearchAdapter(
+class ServiceListAdapter(
     private val dataList: List<String>, private val searchListener: SearchListener
 ) : BaseListAdapter<String>(dataList) {
     @FunctionalInterface
