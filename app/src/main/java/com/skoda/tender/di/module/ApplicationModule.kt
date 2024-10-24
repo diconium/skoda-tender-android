@@ -3,24 +3,24 @@ package com.skoda.tender.di.module
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import com.skoda.tender.App
+import com.skoda.tender.MainApplication
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class ApplicationModule(var app: App) {
+class ApplicationModule(var mainApplication: MainApplication) {
 
 
     @Provides
     @Singleton
-    fun provideApp(): App = app
+    fun provideApp(): MainApplication = mainApplication
 
     @Provides
     @Singleton
-    fun provideContext(): Context = app.applicationContext
+    fun provideContext(): Context = mainApplication.applicationContext
 
     @Provides
     @Singleton
-    fun provideSharedPreferences(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(app)
+    fun provideSharedPreferences(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(mainApplication)
 }

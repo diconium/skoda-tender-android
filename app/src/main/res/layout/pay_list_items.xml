@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="18dp"
-            android:text="Pay to park"
+            android:text="@string/pay_to_park"
             android:lineHeight="19.26px"
             android:fontFamily="@font/skoda_next_light"
             android:textFontWeight="900"
@@ -41,13 +41,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="18dp"
-            android:text="123"
+            android:text="@string/service_description"
             android:lineHeight="19.26px"
             android:fontFamily="@font/skoda_next_light"
             android:textFontWeight="900"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:visibility="gone"
+            android:visibility="visible"
             />
         </LinearLayout>
 

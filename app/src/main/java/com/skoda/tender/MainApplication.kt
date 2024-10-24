@@ -3,7 +3,7 @@ package com.skoda.tender
 import com.skoda.tender.di.component.DaggerApplicationComponent
 import com.skoda.tender.di.module.ApplicationModule
 
-class App : android.app.Application() {
+class MainApplication : android.app.Application() {
 
     val component by lazy {
         DaggerApplicationComponent.builder()

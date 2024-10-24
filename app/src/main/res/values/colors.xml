@@ -11,6 +11,14 @@
     <color name="grey">#C4C6C7</color>
     <color name="light_green">#78FAAE</color>
 
+    <color name="md_theme_light_primary">#51F093</color>
+    <color name="md_theme_light_onPrimary">#F6F6F6</color>
+    <color name="md_theme_light_primaryContainer">#EADDFF</color>
+    <color name="md_theme_light_onPrimaryContainer">#21005D</color>
+    <color name="md_theme_light_secondary">#625B71</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#E8DEF8</color>
+
 
 
 

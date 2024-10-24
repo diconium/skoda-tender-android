@@ -2,9 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <variable
-            name="serviceItem"
-            type="com.skoda.launcher.ui.adapterimport.ServiceListAdapter" />
+
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -16,6 +14,7 @@
         app:strokeColor="@color/light_green">
 
         <LinearLayout
+            android:id="@+id/serviceItemLy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#303132"
@@ -28,8 +27,8 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <View
-                    android:id="@+id/red_dot"
+                <ImageView
+                    android:id="@+id/iv_red_dot"
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:layout_gravity="center_vertical"
@@ -41,7 +40,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Expired"
-                    android:textColor="#f15252"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
 
                 <LinearLayout
@@ -60,7 +60,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/date_text"
+                android:id="@+id/exp_date_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
@@ -73,9 +73,9 @@
                 android:id="@+id/type_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/skoda_next_regular"
                 android:gravity="left"
                 android:padding="10dp"
-                android:fontFamily="@font/skoda_next_regular"
                 android:text="AMBIENT LIGHTING"
                 android:textColor="@color/white"
                 android:textSize="18sp"

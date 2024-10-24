@@ -7,6 +7,8 @@
     <data>
 
     </data>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/cl_main_layout"
     android:layout_width="match_parent"
@@ -112,13 +114,22 @@
         android:orientation="horizontal"
         tools:listitem="@layout/service_list_items"
         tools:itemCount="2"
-        app:layout_constraintTop_toBottomOf="@+id/chip_layout">
+        app:layout_constraintTop_toBottomOf="@+id/chip_layout"
+        app:layout_constraintBottom_toTopOf="@+id/ll_service_info">
 
 
     </androidx.recyclerview.widget.RecyclerView>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73" />
+
 
 
     <LinearLayout
+        android:id="@+id/ll_service_info"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
@@ -135,12 +146,19 @@
             android:backgroundTint="@color/black"
             app:cardElevation="0dp">
 
+
+
             <LinearLayout
                 android:id="@+id/ll_service_title_section"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/rounded_corners_top"
                 android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"                    >
 
                 <TextView
                     android:id="@+id/tv_service_title"
@@ -161,8 +179,8 @@
                     android:padding="10dp"
                     app:layout_constraintTop_toBottomOf="@+id/tv_service_title">
 
-                    <View
-                        android:id="@+id/view_red_dot"
+                    <ImageView
+                        android:id="@+id/iv_red_dot"
                         android:layout_width="12dp"
                         android:layout_height="12dp"
                         android:layout_gravity="center_vertical"
@@ -175,7 +193,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:text="Expired"
-                        android:textColor="#f15252"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                     <TextView
@@ -187,7 +205,7 @@
                         android:textColor="#c4c6c7"
                         android:textSize="14sp" />
                 </LinearLayout>
-                >
+
 
                 <LinearLayout
                     android:id="@+id/ll_auto_renew_section"
@@ -209,7 +227,7 @@
 
                     </TextView>
 
-                    <ImageView
+                    <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/iv_auto_renew_switch"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -217,9 +235,9 @@
                         android:layout_marginEnd="30dp"
                         android:layout_weight="1"
                         android:scaleType="fitEnd"
-                        android:src="@drawable/ic_switch_active">
+                        >
 
-                    </ImageView>
+                    </com.google.android.material.switchmaterial.SwitchMaterial>
 
                 </LinearLayout>
 
@@ -252,19 +270,28 @@
 
                     </TextView>
                 </LinearLayout>
+                </LinearLayout>
+
+               <!-- <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">-->
 
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/pay_list_recycler"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="10dp"
                     android:orientation="vertical"
                     tools:listitem="@layout/pay_list_items"
                     tools:itemCount="2"
-                    app:layout_constraintTop_toBottomOf="@+id/chip_layout">
+                    app:layout_constraintTop_toBottomOf="@+id/guideline">
 
 
                 </androidx.recyclerview.widget.RecyclerView>
+<!--
+                </LinearLayout>
+-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -289,3 +316,6 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
+
+
+

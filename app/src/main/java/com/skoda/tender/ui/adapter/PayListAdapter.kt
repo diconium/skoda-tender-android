@@ -3,12 +3,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import com.skoda.tender.core.BaseListAdapter
+import com.skoda.tender.data.source.response.IncludedServices
 import com.skoda.tender.databinding.PayListItemsBinding
 
 class PayListAdapter(
-    private val dataList: List<String>,
+    private val dataList: List<IncludedServices>,
     private val searchListener: SearchListener
-) : BaseListAdapter<String>(dataList) {
+) : BaseListAdapter<IncludedServices>(dataList) {
 
     @FunctionalInterface
     interface SearchListener {
@@ -27,7 +28,8 @@ class PayListAdapter(
     override fun bind(binding: ViewDataBinding, position: Int) {
         if (binding is PayListItemsBinding) {
             val currentItem = dataList[position]
-            binding.tvPayType.text = currentItem
+            binding.tvPayType.text = currentItem.name
+            binding.tvPayTypeExt1.text = currentItem.description
 
             // Check if this position is expanded or collapsed
             val isExpanded = expandedPositions.contains(position)
@@ -36,7 +38,7 @@ class PayListAdapter(
             binding.tvPayTypeExt1.visibility = if (isExpanded) View.VISIBLE else View.GONE
 
             // Handle dropdown button click
-            binding.ivDropDown.setOnClickListener {
+            binding.root.setOnClickListener {
                 if (isExpanded) {
                     // Collapse the item
                     expandedPositions.remove(position)
@@ -48,11 +50,6 @@ class PayListAdapter(
                 notifyItemChanged(position)
             }
 
-            // Handle item click to invoke the listener
-            binding.root.setOnClickListener {
-                // Notify the listener with the clicked item
-                searchListener.onClickItem(currentItem)
-            }
         }
     }
 }

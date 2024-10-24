@@ -29,7 +29,10 @@
     <string name="connect_services">Skoda connect services</string>
     <string name="infotainment_apps">Payment Services</string>
     <string name="on_demand_services">On demand services</string>
+    <string name="pay_to_park">Pay to park</string>
     <string name="service_description">Get the real-time info about the traffic with the online infotainment.</string>
 
-
+    <string name="expired_days_ago">Expired %1$d days ago</string>
+    <string name="expires_in_day">Expires in %1$d day</string>
+    <string name="expires_on_date">Expires on %1$s</string>
 </resources>
