@@ -31,23 +31,8 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew assembleRelease
         
-      - name: List APK directory contents
-        run: ls -la app/build/outputs/apk/release/
-        
       - name: Create artifacts directory
         run: mkdir -p ${{ github.workspace }}/artifacts
-        
-      - name: Debugging step
-        run: |
-          echo "Current directory: $(pwd)"
-          echo "Listing root directory:"
-          ls -la /
-          echo "Listing home directory:"
-          ls -la /home/runner/
-          echo "Listing workspace directory:"
-          ls -la ${{ github.workspace }}
-          echo "Listing artifacts directory:"
-          ls -la ${{ github.workspace }}/artifacts
       
       - name: Copy APK to artifacts directory
         run: cp app/build/outputs/apk/release/app-release-unsigned.apk ${{ github.workspace }}/artifacts/
