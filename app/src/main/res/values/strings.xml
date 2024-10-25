@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Skoda</string>
+    <string name="position" translatable="false">position</string>
+    <string name="title">Title</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Ambient_Lighting">Ambient Lighting - additional functions</string>
+    <string name="Date">Expired on 22 Aug 2024</string>
+    <string name="purchase">Purchase</string>
+    <string name="skoda">Skoda</string>
+    <string name="Additional_info">Experience perfect comfort with interior lighting. The ambient LED lighting includes footwell illumination and offers up to thirty attractive color options.</string>
+
+    <string name="title_car">Car</string>
+    <string name="title_map">Maps</string>
+    <string name="title_inspect">Inspect</string>
+    <string name="title_discover">Discover</string>
+    <string name="title_profile">Profile</string>
+    <string name="online">Online</string>
+    <string name="enyaq_coupe">Enyaq Coupe</string>
+    <string name="seconds_ago">seconds ago</string>
+    <string name="vehicle_status">Vehicle status</string>
+    <string name="un_locked">Unlocked</string>
+    <string name="expired">EXPIRED</string>
+    <string name="active">ACTIVE</string>
+    <string name="battery_range">Battery range</string>
+    <string name="battery_percentage_kms">61% / 276 km</string>
+    <string name="un_plug">Not plugged in</string>
+    <string name="target_temperature">Target temperature</string>
+    <string name="temp">21\u00B0 C</string>
+    <string name="see_all">See all C</string>
+    <string name="payment_services">Payment Services</string>
+    <string name="connect_services">Skoda connect services</string>
+    <string name="infotainment_apps">Payment Services</string>
+    <string name="on_demand_services">On demand services</string>
+    <string name="pay_to_park">Pay to park</string>
+    <string name="service_description">Get the real-time info about the traffic with the online infotainment.</string>
+
+    <string name="expires_on_date">on %1$s </string>
+    <string name="expired_days_ago"> Until on %1$s</string>
+    <string name="notification_expired"> Subscription is about to expire</string>
+    <string name="notification_expired_desc">Your subscription on %1$s is about to expire , click here to renew it. </string>
+    <string name="subscription_in_progress">Subscription in progress</string>
+</resources>
