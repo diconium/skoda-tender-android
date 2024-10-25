@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "864069329997",
+    "project_id": "skoda-poc-fb",
+    "storage_bucket": "skoda-poc-fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864069329997:android:b27526d17ebc9a6db7e804",
+        "android_client_info": {
+          "package_name": "com.skoda.tender"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDccS2goBTjyAlejjDieep1m8BzNWfVoEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
