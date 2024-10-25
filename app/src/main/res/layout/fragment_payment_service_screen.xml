@@ -228,7 +228,6 @@
                         android:layout_gravity="end"
                         android:layout_marginEnd="30dp"
                         android:layout_weight="1"
-
                         app:track="@drawable/custom_switch_track"
                         app:thumbTint="@drawable/switch_thumb_color_always_grey"
                         app:trackTint="@drawable/switch_track_color" />

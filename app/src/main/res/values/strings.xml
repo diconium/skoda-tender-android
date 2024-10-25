@@ -20,6 +20,8 @@
     <string name="seconds_ago">seconds ago</string>
     <string name="vehicle_status">Vehicle status</string>
     <string name="un_locked">Unlocked</string>
+    <string name="expired">EXPIRED</string>
+    <string name="active">ACTIVE</string>
     <string name="battery_range">Battery range</string>
     <string name="battery_percentage_kms">61% / 276 km</string>
     <string name="un_plug">Not plugged in</string>
@@ -33,9 +35,8 @@
     <string name="pay_to_park">Pay to park</string>
     <string name="service_description">Get the real-time info about the traffic with the online infotainment.</string>
 
-    <string name="expired_days_ago">Expired %1$d days ago</string>
-    <string name="expires_in_day">Expires in %1$d day</string>
-    <string name="expires_on_date">Expires on %1$s</string>
+    <string name="expires_on_date">on %1$s </string>
+    <string name="expired_days_ago"> Until on %1$s</string>
     <string name="notification_expired"> Subscription is about to expire</string>
     <string name="notification_expired_desc">Your subscription on %1$s is about to expire , click here to renew it. </string>
     <string name="subscription_in_progress">Subscription in progress</string>

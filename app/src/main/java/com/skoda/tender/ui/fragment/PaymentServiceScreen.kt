@@ -1,10 +1,11 @@
 package com.skoda.tender.ui.fragment
 
 import PayListAdapter
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -12,15 +13,14 @@ import androidx.recyclerview.widget.SnapHelper
 import com.skoda.tender.R
 import com.skoda.tender.core.BaseFragment
 import com.skoda.tender.data.source.response.ApiResult
-import com.skoda.tender.data.source.response.IncludedServices
 import com.skoda.tender.data.source.response.SubscriptionStatus
 import com.skoda.tender.data.source.response.Subscriptions
 import com.skoda.tender.databinding.FragmentPaymentServiceScreenBinding
 import com.skoda.tender.ui.adapter.ServiceListAdapter
-import com.skoda.tender.ui.main.MainActivityViewModel
 import com.skoda.tender.ui.viewmodel.ServiceViewModel
 import com.skoda.tender.utils.extensions.DateUtils
 import java.util.Objects.isNull
+
 
 class PaymentServiceScreen : BaseFragment<ServiceViewModel, FragmentPaymentServiceScreenBinding>(
     ServiceViewModel::class.java
@@ -29,7 +29,14 @@ class PaymentServiceScreen : BaseFragment<ServiceViewModel, FragmentPaymentServi
         return R.layout.fragment_payment_service_screen
     }
 
+    companion object {
+        private const val PURCHASE_URL = "https://shop.skoda-connect.com"
+    }
+
+    private var isFinishByclick: Boolean = false
+    private  var mCurrentItem: Subscriptions? = null
     var isFragmentActive = false
+
 
     /**
      * Adapter for displaying the list of subscriptions.
@@ -46,10 +53,6 @@ class PaymentServiceScreen : BaseFragment<ServiceViewModel, FragmentPaymentServi
      */
     private var mAllSubscriptions: ArrayList<Subscriptions>? = null
 
-    /**
-     * Boolean indicating whether to filter for active subscriptions.
-     */
-    private var mFilterActive: Boolean = true
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -93,20 +96,24 @@ class PaymentServiceScreen : BaseFragment<ServiceViewModel, FragmentPaymentServi
      * @param currentItem The current subscription to display.
      */
     private fun updateSubscriptionDetails(currentItem: Subscriptions) {
+         mCurrentItem = currentItem
         mBinding.tvServiceTitle.text = currentItem.name // Assuming name is a String property
 
         when (currentItem.status) {
             SubscriptionStatus.ACTIVATED -> {
                 mBinding.ivRedDot.setImageDrawable(context?.getDrawable(R.drawable.active_status))
-                mBinding.tvServiceStatus.text = "Active"
-                mBinding.tvServiceExpiry.text = currentItem.startDate?.let {
+                mBinding.tvServiceStatus.text = context?.getText(R.string.active) ?: return
+
+                mBinding.tvServiceExpiry.text = currentItem.endDate?.let {
                     DateUtils.subDateFormatter(it, false, requireContext())
                 }
             }
             SubscriptionStatus.INACTIVE -> {
                 mBinding.ivRedDot.setImageDrawable(context?.getDrawable(R.drawable.circle_red))
-                mBinding.tvServiceStatus.text = "Expired"
-                mBinding.tvServiceExpiry.text = currentItem.startDate?.let {
+
+                mBinding.tvServiceStatus.text = context?.getText(R.string.expired) ?: return
+
+                mBinding.tvServiceExpiry.text = currentItem.endDate?.let {
                     DateUtils.subDateFormatter(it, true, requireContext())
                 }
             }
@@ -121,13 +128,20 @@ class PaymentServiceScreen : BaseFragment<ServiceViewModel, FragmentPaymentServi
             })
         mBinding.payListRecycler.adapter = playlistAdapter
 
-        mBinding.purchaseBtn.setOnClickListener {
-            currentItem.let { it1 -> viewModel.sendNotification(it1) }
-        }
-
-
-
+       openPurchasePage()
     }
+
+    private fun openPurchasePage(){
+        mBinding.purchaseBtn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                isFinishByclick=true
+                val uri = Uri.parse(PURCHASE_URL)
+                val intent = Intent(Intent.ACTION_VIEW, uri)
+                startActivity(intent)
+            }
+        })
+    }
+
 
     /**
      * Applies the active filter to the list of subscriptions.
@@ -197,5 +211,8 @@ class PaymentServiceScreen : BaseFragment<ServiceViewModel, FragmentPaymentServi
     override fun onDestroyView() {
         super.onDestroyView()
         isFragmentActive = false
+
+        if (!isFinishByclick)
+            mCurrentItem?.let {  viewModel.sendNotification(it)}
     }
 }

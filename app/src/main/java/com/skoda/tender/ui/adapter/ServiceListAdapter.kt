@@ -70,7 +70,7 @@ class ServiceListAdapter(
 
             when (subscription.status) {
                 SubscriptionStatus.ACTIVATED -> {
-                    itemBinding.expireText.text = "Active"
+                    itemBinding.expireText.text = context.getText(R.string.active)
                     itemBinding.ivRedDot.setImageDrawable(context.getDrawable(R.drawable.active_status))
 
                     //itemBinding.expireText.setBackgroundColor(context.getColorCompat(R.color.md_theme_light_primary))
@@ -79,7 +79,7 @@ class ServiceListAdapter(
                 }
 
                 SubscriptionStatus.INACTIVE -> {
-                    itemBinding.expireText.text = "Expired"
+                    itemBinding.expireText.text = "EXPIRED"
                     itemBinding.ivRedDot.setImageDrawable(context.getDrawable(R.drawable.circle_red))
                     //itemBinding.expireText.setBackgroundColor(context.getColorCompat(R.color.white))
                     itemBinding.expDateText.text =

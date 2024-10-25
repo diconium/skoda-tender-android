@@ -20,7 +20,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding>(private va
     @LayoutRes
     abstract fun getLayoutRes(): Int
 
-    private fun getViewM(): VM = ViewModelProvider(this).get(mViewModelClass)
+    private fun getViewM(): VM = ViewModelProvider(requireActivity()).get(mViewModelClass)
     open fun onInject() {}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

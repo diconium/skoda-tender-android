@@ -13,7 +13,8 @@
     </style>
 
     <style name="Splash" parent="Theme.Material3.DayNight.NoActionBar">
-         <item name="android:windowBackground">@drawable/splash_screen_bg</item>
+        <item name="android:windowBackground">@drawable/splash_screen_bg</item>
+        <item name="android:statusBarColor">#0F3A30</item>
     </style>
 
 
