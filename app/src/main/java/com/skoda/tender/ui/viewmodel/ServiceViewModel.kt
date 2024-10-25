@@ -1,11 +1,15 @@
 package com.skoda.tender.ui.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.skoda.tender.R
 import com.skoda.tender.core.BaseViewModel
+import com.skoda.tender.data.source.remote.config.APIConfig
 import com.skoda.tender.data.source.response.ApiResult
+import com.skoda.tender.data.source.response.NotificationPayload
 import com.skoda.tender.data.source.response.Subscriptions
 import com.skoda.tender.data.source.response.VehicleResponse
 import com.skoda.tender.domain.usecase.SubscriptionsUseCase
@@ -55,6 +59,22 @@ class ServiceViewModel(application: Application) : BaseViewModel(application) {
             .collect { values ->
                 subscriptions = values.data?.subscriptions
                 responseSubscriptions.value = values
+            }
+    }
+
+    fun sendNotification(subscriptions: Subscriptions) = viewModelScope.launch {
+        responseSubscriptions.value = ApiResult.Loading()
+        Log.i("TAG", "sendNotification: sending ")
+        subscriptionsUseCase.sendNotifications(
+            NotificationPayload(
+                subscriptions.id,
+                APIConfig.VIN_NO,
+                subscriptions.name,
+                app.getString(R.string.subscription_in_progress)
+            )
+        )
+            .collect { values ->
+                Log.i("TAG", "sendNotification: done " + values)
             }
     }
 }

@@ -54,7 +54,14 @@ class PaymentServiceScreen : BaseFragment<ServiceViewModel, FragmentPaymentServi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         isFragmentActive = true
-        Log.d("screen", "onViewCreated")
+
+
+        mBinding.ivBack.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .remove(this).commit()
+        }
+
+
 
         // Scroll listener to update title based on the current visible item
         mBinding.rvPaymentServices.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -93,26 +100,33 @@ class PaymentServiceScreen : BaseFragment<ServiceViewModel, FragmentPaymentServi
                 mBinding.ivRedDot.setImageDrawable(context?.getDrawable(R.drawable.active_status))
                 mBinding.tvServiceStatus.text = "Active"
                 mBinding.tvServiceExpiry.text = currentItem.startDate?.let {
-                    DateUtils.subDateFormater(it, false, requireContext())
+                    DateUtils.subDateFormatter(it, false, requireContext())
                 }
             }
             SubscriptionStatus.INACTIVE -> {
                 mBinding.ivRedDot.setImageDrawable(context?.getDrawable(R.drawable.circle_red))
                 mBinding.tvServiceStatus.text = "Expired"
                 mBinding.tvServiceExpiry.text = currentItem.startDate?.let {
-                    DateUtils.subDateFormater(it, true, requireContext())
+                    DateUtils.subDateFormatter(it, true, requireContext())
                 }
             }
         }
 
-        mBinding.rvPaymentServices.layoutManager =
+        mBinding.payListRecycler.layoutManager =
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         val playlistAdapter =
             PayListAdapter(currentItem.includedServices, object : PayListAdapter.SearchListener {
                 override fun onClickItem(position: String) {
                 }
             })
-        mBinding.rvPaymentServices.adapter = playlistAdapter
+        mBinding.payListRecycler.adapter = playlistAdapter
+
+        mBinding.purchaseBtn.setOnClickListener {
+            currentItem.let { it1 -> viewModel.sendNotification(it1) }
+        }
+
+
+
     }
 
     /**
@@ -173,7 +187,7 @@ class PaymentServiceScreen : BaseFragment<ServiceViewModel, FragmentPaymentServi
                 override fun onClickItem(subscriptions: Subscriptions) {
                     if (!isFragmentActive) {
                         requireActivity().supportFragmentManager.beginTransaction()
-                            .add(R.id.fragment_container, PaymentServiceScreen()).commit()
+                            .add(R.id.fragment_container2, PaymentServiceScreen()).commit()
                     }
                 }
             })

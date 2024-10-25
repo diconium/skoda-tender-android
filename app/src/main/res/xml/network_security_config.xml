@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">skoda-services-dev-1394477866.eu-central-1.elb.amazonaws.com</domain>
+        <domain includeSubdomains="true">skoda-backend-dev-lb-872235717.eu-central-1.elb.amazonaws.com</domain>
     </domain-config>
 </network-security-config>

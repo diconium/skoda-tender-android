@@ -1,6 +1,8 @@
 package com.skoda.tender.data.source.remote
 
 
+import com.skoda.tender.data.source.response.NotificationPayload
+import com.skoda.tender.data.source.response.NotificationResponce
 import com.skoda.tender.data.source.response.VehicleResponse
 import retrofit2.Response
 import retrofit2.http.*
@@ -19,6 +21,11 @@ interface SubscriptionsApi {
      * @param vin The Vehicle Identification Number used to fetch the subscription status.
      * @return A [Response] containing [VehicleResponse] with the subscription data.
      */
-    @GET("subscriptions/{vin}/status")
-    suspend fun getSubscriptions(@Path("vin") vin: String): Response<VehicleResponse>
+     @GET("subscriptions/{vin}/status")
+     suspend fun getSubscriptions(@Path("vin") vin: String): Response<VehicleResponse>
+
+
+
+    @POST("/notifications/send")
+    suspend fun sendNotifications(@Body notificationPayload: NotificationPayload): Response<NotificationResponce>
 }

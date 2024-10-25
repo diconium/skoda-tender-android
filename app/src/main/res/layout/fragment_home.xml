@@ -306,13 +306,19 @@
                             android:orientation="vertical"
                             android:padding="10dp">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
+                            <com.google.android.material.switchmaterial.SwitchMaterial
+                                android:id="@+id/iv_auto_renew_switch"
+                                android:layout_width="80dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="end"
                                 android:layout_marginEnd="30dp"
-                                android:src="@drawable/ic_switch_active">
+                                android:layout_weight="1"
 
-                            </ImageView>
+                                app:track="@drawable/custom_switch_track"
+                                app:thumbTint="@drawable/switch_thumb_color_always_grey"
+                                app:trackTint="@drawable/switch_track_color" />
+
+
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -352,17 +358,6 @@
 
             </TextView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/see_all"
-                android:textColor="#78faae"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="MissingConstraints">
-
-            </TextView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView

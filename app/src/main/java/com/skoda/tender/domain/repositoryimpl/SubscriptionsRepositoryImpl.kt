@@ -6,6 +6,8 @@ import com.skoda.tender.data.datasource.SubscriptionsDataSource
 import com.skoda.tender.data.source.base.BaseApiResponse
 import com.skoda.tender.data.source.remote.config.APIConfig.VIN_NO
 import com.skoda.tender.data.source.response.ApiResult
+import com.skoda.tender.data.source.response.NotificationPayload
+import com.skoda.tender.data.source.response.NotificationResponce
 import com.skoda.tender.data.source.response.VehicleResponse
 import com.skoda.tender.domain.repository.SubscriptionsRepository
 import kotlinx.coroutines.Dispatchers
@@ -35,6 +37,16 @@ class SubscriptionsRepositoryImpl(private val subscriptionsDataSource: Subscript
             emit(
                 safeApiCall {
                     subscriptionsDataSource.getStoryLists(VIN_NO)
+                }
+            )
+        }.flowOn(Dispatchers.IO)
+    }
+
+    override suspend fun sendNotifications(payload: NotificationPayload): Flow<ApiResult<NotificationResponce>> {
+        return flow {
+            emit(
+                safeApiCall {
+                    subscriptionsDataSource.sendNotifications(payload)
                 }
             )
         }.flowOn(Dispatchers.IO)

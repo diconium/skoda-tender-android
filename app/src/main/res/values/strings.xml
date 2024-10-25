@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Skoda Poc App</string>
+    <string name="app_name">Skoda</string>
     <string name="position" translatable="false">position</string>
     <string name="title">Title</string>
 
@@ -7,6 +7,7 @@
     <string name="Ambient_Lighting">Ambient Lighting - additional functions</string>
     <string name="Date">Expired on 22 Aug 2024</string>
     <string name="purchase">Purchase</string>
+    <string name="skoda">Skoda</string>
     <string name="Additional_info">Experience perfect comfort with interior lighting. The ambient LED lighting includes footwell illumination and offers up to thirty attractive color options.</string>
 
     <string name="title_car">Car</string>
@@ -35,4 +36,7 @@
     <string name="expired_days_ago">Expired %1$d days ago</string>
     <string name="expires_in_day">Expires in %1$d day</string>
     <string name="expires_on_date">Expires on %1$s</string>
+    <string name="notification_expired"> Subscription is about to expire</string>
+    <string name="notification_expired_desc">Your subscription on %1$s is about to expire , click here to renew it. </string>
+    <string name="subscription_in_progress">Subscription in progress</string>
 </resources>

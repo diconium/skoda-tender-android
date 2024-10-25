@@ -3,6 +3,9 @@ package com.skoda.tender.data.datasourceimpl
 
 import com.skoda.tender.data.datasource.SubscriptionsDataSource
 import com.skoda.tender.data.source.remote.SubscriptionsApi
+import com.skoda.tender.data.source.remote.config.APIConfig
+import com.skoda.tender.data.source.response.NotificationPayload
+import com.skoda.tender.data.source.response.NotificationResponce
 import com.skoda.tender.data.source.response.VehicleResponse
 import retrofit2.Response
 
@@ -23,6 +26,10 @@ class SubscriptionsDataSourceImpl(private var api: SubscriptionsApi) : Subscript
      * @return A [Response] containing [VehicleResponse] from the API.
      */
     override suspend fun getStoryLists(vin: String): Response<VehicleResponse> {
-        return api.getSubscriptions(vin)
+        return api.getSubscriptions(APIConfig.VIN_NO)
+    }
+
+    override suspend fun sendNotifications(notificationPayload: NotificationPayload): Response<NotificationResponce> {
+        return api.sendNotifications(notificationPayload)
     }
 }

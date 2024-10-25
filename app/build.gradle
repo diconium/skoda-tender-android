@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 apply plugin: 'kotlin-kapt'
@@ -52,10 +53,10 @@ dependencies {
     implementation libs.material
     implementation libs.androidx.activity
     implementation libs.androidx.constraintlayout
+    implementation libs.firebase.messaging
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
-
     //di
     implementation rootProject.ext.dagger
     kapt rootProject.ext.daggerApt
@@ -72,7 +73,6 @@ dependencies {
     implementation rootProject.ext.gson
     implementation rootProject.ext.rxJavaAdapter
     implementation rootProject.ext.gsonConverter
-
     //arch-comp Room
     implementation("androidx.room:room-runtime:$room_version")
     // To use Kotlin annotation processing tool (kapt)
@@ -81,5 +81,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     implementation("androidx.paging:paging-runtime:$paging_version")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
 
 }

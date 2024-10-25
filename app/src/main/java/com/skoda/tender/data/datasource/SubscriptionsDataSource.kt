@@ -1,5 +1,7 @@
 package com.skoda.tender.data.datasource
 
+import com.skoda.tender.data.source.response.NotificationPayload
+import com.skoda.tender.data.source.response.NotificationResponce
 import com.skoda.tender.data.source.response.VehicleResponse
 import retrofit2.Response
 
@@ -20,4 +22,7 @@ interface SubscriptionsDataSource {
      * @return A [Response] containing [VehicleResponse].
      */
     suspend fun getStoryLists(vin: String): Response<VehicleResponse>
+
+    suspend fun sendNotifications(notificationPayload: NotificationPayload): Response<NotificationResponce>
+
 }

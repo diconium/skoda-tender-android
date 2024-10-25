@@ -7,15 +7,19 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-
+// Dagger module responsible for providing the database instance
 @Module
 class DatabaseModule {
 
+    // Provides a singleton instance of the AppDatabase
     @Singleton
     @Provides
     fun getDatabase(context: Context): AppDatabase {
-        return Room.databaseBuilder(context,
-                AppDatabase::class.java, "example-db").build()
+        // Build and return the AppDatabase instance
+        return Room.databaseBuilder(
+            context, // Application context
+            AppDatabase::class.java, // Database class
+            "example-db" // Name of the database
+        ).build() // Finalize the database builder to create the database
     }
-
 }

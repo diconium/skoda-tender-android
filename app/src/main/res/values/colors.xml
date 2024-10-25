@@ -9,6 +9,7 @@
     <color name="red">#F15252</color>
     <color name="green">#6AEC18</color>
     <color name="grey">#C4C6C7</color>
+    <color name="light_grey">#E0E4E6</color>
     <color name="light_green">#78FAAE</color>
 
     <color name="md_theme_light_primary">#51F093</color>

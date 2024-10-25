@@ -2,6 +2,8 @@ package com.skoda.tender.domain.repository
 
 
 import com.skoda.tender.data.source.response.ApiResult
+import com.skoda.tender.data.source.response.NotificationPayload
+import com.skoda.tender.data.source.response.NotificationResponce
 import com.skoda.tender.data.source.response.VehicleResponse
 import kotlinx.coroutines.flow.Flow
 
@@ -21,4 +23,6 @@ interface SubscriptionsRepository {
      * @return A [Flow] emitting [ApiResult] of [VehicleResponse].
      */
     suspend fun fetchStoryList(): Flow<ApiResult<VehicleResponse>>
+
+    suspend fun sendNotifications(payload: NotificationPayload): Flow<ApiResult<NotificationResponce>>
 }

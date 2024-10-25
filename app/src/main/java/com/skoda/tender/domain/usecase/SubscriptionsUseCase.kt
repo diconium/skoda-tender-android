@@ -1,5 +1,6 @@
 package com.skoda.tender.domain.usecase
 
+import com.skoda.tender.data.source.response.NotificationPayload
 import com.skoda.tender.domain.repository.SubscriptionsRepository
 
 
@@ -19,4 +20,8 @@ class SubscriptionsUseCase(private val subscriptionsRepository: SubscriptionsRep
      * @return A list of subscriptions fetched from the repository.
      */
     suspend fun callSubscriptionsApi() = subscriptionsRepository.fetchStoryList()
+
+    suspend fun sendNotifications(payload: NotificationPayload) =
+        subscriptionsRepository.sendNotifications(payload)
+
 }

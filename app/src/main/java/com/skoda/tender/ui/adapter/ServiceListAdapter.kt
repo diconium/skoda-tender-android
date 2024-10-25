@@ -75,7 +75,7 @@ class ServiceListAdapter(
 
                     //itemBinding.expireText.setBackgroundColor(context.getColorCompat(R.color.md_theme_light_primary))
                     itemBinding.expDateText.text =
-                        subscription.startDate?.let { DateUtils.subDateFormater(it, false, context) }
+                        subscription.endDate?.let { DateUtils.subDateFormatter(it, false, context) }
                 }
 
                 SubscriptionStatus.INACTIVE -> {
@@ -83,7 +83,7 @@ class ServiceListAdapter(
                     itemBinding.ivRedDot.setImageDrawable(context.getDrawable(R.drawable.circle_red))
                     //itemBinding.expireText.setBackgroundColor(context.getColorCompat(R.color.white))
                     itemBinding.expDateText.text =
-                        subscription.endDate?.let { DateUtils.subDateFormater(it, true, context) }
+                        subscription.endDate?.let { DateUtils.subDateFormatter(it, true, context) }
                 }
             }
         }
