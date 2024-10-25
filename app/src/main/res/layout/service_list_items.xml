@@ -11,7 +11,7 @@
         android:layout_margin="8dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
-        app:strokeColor="@color/light_green">
+        app:strokeColor="#303132">
 
         <LinearLayout
             android:id="@+id/serviceItemLy"
