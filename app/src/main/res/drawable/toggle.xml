@@ -1,0 +1,17 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- ON state -->
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#78FAAE" /> <!-- Green when ON -->
+            <corners android:radius="20dp" /> <!-- Rounded corners -->
+        </shape>
+    </item>
+
+    <!-- OFF state -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#D3D3D3" /> <!-- Gray when OFF -->
+            <corners android:radius="20dp" /> <!-- Rounded corners -->
+        </shape>
+    </item>
+</selector>
