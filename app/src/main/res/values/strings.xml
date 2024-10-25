@@ -19,7 +19,7 @@
     <string name="enyaq_coupe">Enyaq Coupe</string>
     <string name="seconds_ago">seconds ago</string>
     <string name="vehicle_status">Vehicle status</string>
-    <string name="locked">Locked</string>
+    <string name="un_locked">Unlocked</string>
     <string name="battery_range">Battery range</string>
     <string name="battery_percentage_kms">61% / 276 km</string>
     <string name="un_plug">Not plugged in</string>
